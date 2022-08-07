@@ -1,0 +1,44 @@
+.detail {
+  display: flex;
+  justify-content: space-between;
+  width: 86%;
+  margin: 0 auto;
+}
+
+.shop {
+  width: 45%;
+  margin-top: 100px;
+}
+
+.shop__header {
+  display: flex;
+  align-items: center;
+}
+
+.back {
+  background: #fff;
+  color: black;
+  padding: 7px 13px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(183, 183, 183);
+  font-size: 22px;
+  margin-right: 12px;
+}
+
+.shop__ttl {
+  font-size: 28px;
+}
+
+img {
+  width: 100%;
+  margin: 30px 0;
+}
+
+.hashutag {
+  display: flex;
+  padding-bottom: 25px;
+}
+
+.shop__content {
+  line-height: 22px;
+}
