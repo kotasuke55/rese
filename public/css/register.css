@@ -45,3 +45,8 @@ input {
   color: #fff;
   border: none;
 }
+
+.error {
+  color: red;
+  margin: 0 0 10px 50px;
+}

@@ -29,8 +29,16 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'email' => ['required', 'string', 'email'],
-            'password' => ['required', 'string'],
+            'email' => ['required'],
+            'password' => ['required'],
+        ];
+    }
+
+    public function messages()
+    {
+        return [
+            'email.required' => 'メールアドレスは入力必須です',
+            'password.required' => 'パスワードは入力必須です'
         ];
     }
 
