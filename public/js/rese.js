@@ -1,3 +1,4 @@
+//ハンバーガーメニューとドロワーメニュー
 const target = document.getElementById("menu");
 target.addEventListener('click', () => {
   target.classList.toggle('open');
@@ -13,14 +14,15 @@ target.addEventListener('click', () => {
 
 //予約時の日付の初期値を当日にする記述
 var date = new Date();
-
 var yyyy = date.getFullYear();
 var mm = ("0" + (date.getMonth() + 1)).slice(-2);
 var dd = ("0" + date.getDate()).slice(-2);
-
 document.getElementById("date").value = yyyy + '-' + mm + '-' + dd;
 
+//予約の日付を当日からにする記述
+document.getElementById("date").min = yyyy + '-' + mm + '-' + dd;
 
+//予約時の入力をリアルタイムで反映させる記述
 window.addEventListener('DOMContentLoaded',function () {
   const date = document.getElementById('date');
   const time = document.getElementById('time');
@@ -45,3 +47,5 @@ window.addEventListener('DOMContentLoaded',function () {
     outputNumber.textContent = number.value+'人';
   });
 });
+
+
