@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\controllers\UserController;
 use App\Http\controllers\ShopController;
 use App\Http\controllers\LikeController;
+use App\Http\controllers\ReserveController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,12 @@ Route::get('/',[ShopController::class,'index']);
 Route::post('/detail',[ShopController::class,'detail']);
 Route::post('/like',[LikeController::class,'like']);
 Route::post('/unlike',[LikeController::class,'unlike']);
+Route::post('search',[ShopController::class,'search']);
+Route::get('search',[ShopController::class,'search']);
+Route::get('mypage',[UserController::class,'mypage']);
+Route::post('reserve',[ReserveController::class,'reserve']);
+Route::post('reserve/delete',[ReserveController::class,'remove']);
+
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');

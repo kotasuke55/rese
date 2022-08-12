@@ -11,3 +11,37 @@ target.addEventListener('click', () => {
   authNav.classList.toggle('in');
 });
 
+//予約時の日付の初期値を当日にする記述
+var date = new Date();
+
+var yyyy = date.getFullYear();
+var mm = ("0" + (date.getMonth() + 1)).slice(-2);
+var dd = ("0" + date.getDate()).slice(-2);
+
+document.getElementById("date").value = yyyy + '-' + mm + '-' + dd;
+
+
+window.addEventListener('DOMContentLoaded',function () {
+  const date = document.getElementById('date');
+  const time = document.getElementById('time');
+  const number = document.getElementById('number');
+
+  outputDate.textContent = date.value;
+  outputTime.textContent = time.value;
+  outputNumber.textContent = number.value+'人';
+
+  date.addEventListener('input', function () {
+    let outputDate = document.getElementById('outputDate');
+    outputDate.textContent = date.value;
+  });
+
+  time.addEventListener('input', function () {
+    let outputTime = document.getElementById('outputTime');
+    outputTime.textContent = time.value;
+  });
+
+  number.addEventListener('input', function () {
+    let outputNumber = document.getElementById('outputNumber');
+    outputNumber.textContent = number.value+'人';
+  });
+});

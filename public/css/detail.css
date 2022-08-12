@@ -42,3 +42,66 @@ img {
 .shop__content {
   line-height: 22px;
 }
+
+.reserve {
+  width: 46%;
+  background: rgb(69, 93, 244);
+  border-radius: 8px;
+}
+
+.reserve__inner {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.reserve__ttl {
+  color: #fff;
+  margin: 35px 0;
+  font-size: 28px;
+}
+
+input,
+select {
+  display: block;
+  padding:5px;
+  border-radius: 5px;
+  margin-bottom: 15px;
+}
+
+input {
+  width: 30%;
+}
+
+select {
+  width: 93%;
+}
+
+.reserve-confirm {
+  background: rgb(249, 249, 252,0.3);
+  color: #fff;
+  width: 90%;
+  padding: 20px;
+  border-radius: 8px;
+  margin-top: 20px;
+}
+
+table th {
+  text-align: left;
+  padding:0 30px 15px 0;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  background: rgb(42, 69, 245);
+  border: none;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 18px;
+  margin-top: 220px;
+  border-radius: 0 0 8px 8px;
+}
+
+.guest {
+  text-align: center;
+}

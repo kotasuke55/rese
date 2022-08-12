@@ -1,0 +1,9 @@
+@extends('layouts.default')
+
+@section('main')
+<link rel="stylesheet" href="css/thsnks.css">
+<div class="thanks">
+  <p class="text">ご予約ありがとうございます</p>
+  <a  class="login" href="/">戻る</a>
+</div>
+@endsection

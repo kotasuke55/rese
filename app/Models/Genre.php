@@ -11,7 +11,7 @@ class Genre extends Model
     protected $guarded = ['id'];
 
     public $fillable = [
-        'genre',
+        'name',
     ];
 
     public function shops()
