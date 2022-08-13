@@ -60,7 +60,7 @@
     <button class="btn">予約する</button>
     @endauth
     @guest
-    <a href="/login" class="btn guest">予約する</button>
+    <a href="/login" class="btn guest">予約する</a>
     @endguest
   </form>
 </div>
