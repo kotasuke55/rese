@@ -63,10 +63,11 @@ img {
 input,
 select {
   display: block;
-  padding:5px;
+  padding: 5px;
   border-radius: 5px;
   margin-bottom: 15px;
 }
+
 
 input {
   width: 30%;
@@ -74,6 +75,24 @@ input {
 
 select {
   width: 93%;
+  appearance: none;
+}
+
+.select {
+  position: relative;
+}
+
+.select:after {
+  content: "";
+  position: absolute;
+  right: 43px;
+  top: 10px;
+  width: 10px;
+  height: 10px;
+  border-top: 2px solid #ccc;
+  border-left: 2px solid #ccc;
+  transform: translateY(-50%) rotate(-135deg);
+  pointer-events: none;
 }
 
 .reserve-confirm {
@@ -98,10 +117,19 @@ table th {
   color: #fff;
   padding: 15px 0;
   font-size: 18px;
-  margin-top: 220px;
+  margin-top: 225px;
   border-radius: 0 0 8px 8px;
 }
 
 .guest {
+  display: block;
+  width: 100%;
+  background: rgb(42, 69, 245);
+  border: none;
+  color: #fff;
+  padding: 15px 0;
+  font-size: 18px;
+  margin-top: 230px;
+  border-radius: 0 0 8px 8px;
   text-align: center;
 }

@@ -24,17 +24,21 @@
     <div class="reserve__inner">
       <h2 class="reserve__ttl">予約</h2>
       <input type="date" name="date" id="date">
-      <select name="time" id="time">
-      @for($time=10;$time<=22;$time++)
-        <option value="{{ $time }}:00">{{$time}}:00</option>
-        <option value="{{ $time }}:30">{{$time}}:30</option>
-      @endfor 
-      </select>
-      <select name="number" id="number">
-      @for($i=1; $i<=8; $i++)
-      <option value="{{ $i }}">{{$i}}人</option>
-      @endfor
-      </select>
+      <div class="select">
+        <select name="time" id="time">
+        @for($time=10;$time<=22;$time++)
+          <option value="{{ $time }}:00">{{$time}}:00</option>
+          <option value="{{ $time }}:30">{{$time}}:30</option>
+        @endfor 
+        </select>
+      </div>
+      <div class="select">
+        <select name="number" id="number">
+        @for($i=1; $i<=8; $i++)
+        <option value="{{ $i }}">{{$i}}人</option>
+        @endfor
+        </select>
+      </div>
       <div class="reserve-confirm">
         <table>
           <tr>
@@ -60,7 +64,7 @@
     <button class="btn">予約する</button>
     @endauth
     @guest
-    <a href="/login" class="btn guest">予約する</a>
+    <a href="/login" class="guest">予約する</a>
     @endguest
   </form>
 </div>
