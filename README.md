@@ -31,3 +31,8 @@ PHP 8.1.6
 Javascript  
 
 ## テーブル設計
+![スクリーンショット 2022-08-14 9 14 55](https://user-images.githubusercontent.com/104364543/184517517-4399b014-f4ab-4b91-944f-b951e67ff053.png)
+![スクリーンショット 2022-08-14 9 15 32](https://user-images.githubusercontent.com/104364543/184517521-15438276-1084-4296-848e-d8c0dab84742.png)
+
+## ER図
+![スクリーンショット 2022-08-07 17 21 11](https://user-images.githubusercontent.com/104364543/184517543-fede9730-11e2-47b4-955e-5dedd38e6219.png)
