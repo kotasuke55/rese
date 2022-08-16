@@ -38,7 +38,7 @@ class LoginRequest extends FormRequest
     {
         return [
             'email.required' => 'メールアドレスは入力必須です',
-            'password.required' => 'パスワードは入力必須です',
+            'password.required' => 'パスワードは入力必須です'
         ];
     }
 
