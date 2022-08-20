@@ -28,11 +28,10 @@ svg {
   width: 20px;
   height: 20px;
   position: absolute;
-  z-index: 5;
+  z-index: 4;
   padding: 15px 0 0  15px;
   opacity: 0.1;
 }
-
 
 .shop__content {
   display: flex;
@@ -99,5 +98,17 @@ svg {
   width: 50px;
 }
 
+@media screen and (max-width:768px) {
+    input {
+      width: 160px;
+    }
 
+    .shop__card {
+      width: calc((100% - 50px * 1) / 2);
+    }
+
+    .shop__content {
+      margin:100px auto 0;
+    }
+}
 

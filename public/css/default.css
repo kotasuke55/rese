@@ -149,3 +149,13 @@ body {
   transform: translateX(100%);
   z-index: 5;
 }
+
+@media screen and (max-width: 768px) {
+  .menu {
+    left: 60px;
+  }
+
+  .header__ttl {
+    left: 130px;
+  }
+}

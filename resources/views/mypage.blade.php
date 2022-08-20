@@ -40,7 +40,21 @@
             <td>{{ $reserve->number }}人</td>
           </tr>
         </table>
-
+        <div class="edit">
+          @if(\Carbon\Carbon::now() < $reserve->date)
+            <form action="/edit" method="post">
+              @csrf
+              <input type="hidden" name="id" value="{{ $reserve->id }}">
+              <button class="edit__btn">変更する</button>
+            </form>
+            @else
+            <form action="evaluation" method="post">
+              @csrf
+              <input type="hidden" name="id" value="{{ $reserve->id }}">
+              <button class="edit__btn">評価する</button>
+            </form>
+          @endif
+        </div>
       </div>
       @endforeach
     </div>

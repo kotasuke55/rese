@@ -50,3 +50,9 @@ input {
   color: red;
   margin: 0 0 10px 50px;
 }
+
+@media screen and (max-width: 768px) {
+  .login {
+    width: 50%;
+  }
+}

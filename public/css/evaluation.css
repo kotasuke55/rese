@@ -1,0 +1,71 @@
+.shop__header {
+  display: flex;
+  align-items: center;
+  margin: 100px 0 30px 30px;
+}
+
+.back {
+  background: #fff;
+  color: black;
+  padding: 7px 13px;
+  border-radius: 5px;
+  box-shadow: 3px 3px 3px rgb(183, 183, 183);
+  font-size: 22px;
+  margin-right: 12px;
+}
+
+.back-text {
+  font-size: 24px;
+}
+
+.evaluation {
+  width: 60%;
+  margin: 0 auto 40px;
+  background-color: #fff;
+}
+
+.evaluation__ttl {
+  text-align: center;
+  font-size: 24px;
+  padding: 20px 0;
+}
+
+.evaluation-shop {
+  padding: 30px 0;
+  font-size: 26px;
+}
+
+.evaluation__inner {
+  text-align: center;
+}
+
+input {
+  width: 30px;
+  height: 26px;
+  margin: 30px 10px;
+}
+
+.comment {
+  margin: 10px 0 ;
+}
+
+.evaluation__btn {
+  margin: 0 auto;
+}
+
+.btn {
+  background: rgb(42, 69, 245);
+  border: none;
+  color: #fff;
+  padding: 10px 40px;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 768px) {
+  .evaluation {
+    width: 73%;
+    margin: 0 auto 40px;
+    background-color: #fff;
+  }
+}

@@ -1,18 +1,7 @@
-.detail {
-  display: flex;
-  justify-content: space-between;
-  width: 86%;
-  margin: 0 auto 50px;
-}
-
-.shop {
-  width: 45%;
-  margin-top: 100px;
-}
-
 .shop__header {
   display: flex;
   align-items: center;
+  margin: 100px 0 0 30px;
 }
 
 .back {
@@ -25,29 +14,16 @@
   margin-right: 12px;
 }
 
-.shop__ttl {
-  font-size: 28px;
-}
-
-img {
-  width: 100%;
-  margin: 30px 0;
-}
-
-.hashutag {
-  display: flex;
-  padding-bottom: 25px;
-}
-
-.shop__content {
-  line-height: 22px;
+.back-text {
+  font-size: 24px;
 }
 
 .reserve {
   width: 46%;
   background: rgb(69, 93, 244);
   border-radius: 8px;
-  height: 670px;
+  height: 570px;  
+  margin:0 auto 50px;
 }
 
 .reserve__inner {
@@ -59,6 +35,7 @@ img {
   color: #fff;
   margin: 35px 0;
   font-size: 28px;
+  padding-top: 30px;
 }
 
 input,
@@ -68,6 +45,7 @@ select {
   border-radius: 5px;
   margin-bottom: 15px;
 }
+
 
 input {
   width: 30%;
@@ -85,7 +63,7 @@ select {
 .select:after {
   content: "";
   position: absolute;
-  right: 43px;
+  right: 50px;
   top: 10px;
   width: 10px;
   height: 10px;
@@ -96,7 +74,7 @@ select {
 }
 
 .reserve-confirm {
-  background: rgb(249, 249, 252,0.3);
+  background: rgb(249, 249, 252, 0.3);
   color: #fff;
   width: 90%;
   padding: 20px;
@@ -106,7 +84,7 @@ select {
 
 table th {
   text-align: left;
-  padding:0 30px 15px 0;
+  padding: 0 30px 15px 0;
 }
 
 .btn {
@@ -117,7 +95,7 @@ table th {
   color: #fff;
   padding: 15px 0;
   font-size: 18px;
-  margin-top: 250px;
+  margin-top: 150px;
   border-radius: 0 0 8px 8px;
 }
 
@@ -129,21 +107,17 @@ table th {
   color: #fff;
   padding: 15px 0;
   font-size: 18px;
-  margin-top: 230px;
+  margin-top: 150px;
   border-radius: 0 0 8px 8px;
   text-align: center;
 }
 
 @media screen and (max-width: 768px) {
   .reserve {
-    width: 53%;
-  }
-
-  input {
-    width: 50%;
-  }
-
-  .reserve-confirm {
-    padding: 20px 10px 20px 20px;
+    width: 60%;
+    background: rgb(69, 93, 244);
+    border-radius: 8px;
+    height: 570px;
+    margin: 0 auto 50px;
   }
 }

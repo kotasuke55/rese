@@ -38,6 +38,11 @@ class Shop extends Model
         return $this->belongsTo('App\Models\Genre');
     }
 
+    public function evalution()
+    {
+      return $this->hasOne('App\Models\Evalution');
+    }
+
       public function is_liked_by_auth_user()
   {
     $id = Auth::id();

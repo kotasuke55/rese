@@ -5,6 +5,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReserveController;
+use App\Http\Controllers\EvaluationController;
 
 /*
 |--------------------------------------------------------------------------
@@ -26,9 +27,18 @@ Route::get('search',[ShopController::class,'search']);
 Route::get('mypage',[UserController::class,'mypage']);
 Route::post('reserve',[ReserveController::class,'reserve']);
 Route::post('reserve/delete',[ReserveController::class,'remove']);
+Route::post('edit',[ReserveController::class,'edit']);
+Route::post('reserve/update',[ReserveController::class,'update']);
+Route::post('evaluation',[EvaluationController::class,'index']);
+Route::post('evaluation/create',[EvaluationController::class,'create']);
+Route::get('evaluation',[EvaluationController::class,'index']);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
 require __DIR__.'/auth.php';
+
+Route::prefix('admin')->name('admin.')->group(function(){
+    require __DIR__.'/admin.php';
+});
