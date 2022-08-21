@@ -34,7 +34,11 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request)
     {
-
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:admins',
+            'password' => ['required', 'confirmed', Rules\Password::defaults()],
+        ]);
 
         $user = Admin::create([
             'name' => $request->name,
@@ -44,6 +48,6 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
 
-        return view('admin.auth.login');
+        return redirect(RouteServiceProvider::ADMIN_HOME);
     }
 }
