@@ -47,3 +47,13 @@ Route::prefix('admin')->name('admin.')->group(function(){
     
     require __DIR__.'/admin.php';
 });
+
+
+Route::prefix('representative')->name('representative.')->group(function(){
+
+    Route::get('/dashboard', function () {
+        return view('representative.dashboard');
+    })->middleware(['auth:representative'])->name('dashboard');
+    
+    require __DIR__.'/representative.php';
+});

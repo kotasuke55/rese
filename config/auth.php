@@ -44,6 +44,11 @@ return [
         'driver' => 'session',
         'provider' => 'admins',
     ],
+    'representative' => [
+        'driver' => 'session',
+        'provider' => 'representatives',
+    ]
+
     ],
 
     /*
@@ -71,6 +76,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+        'representative' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\Representative::class,
         ],
 
 
@@ -108,6 +117,12 @@ return [
             'expire' => 60,
             'throttle' => 60,
         ],
+        'representatives' => [
+            'provider' => 'representatives',
+            'table' => 'password_resets',
+            'expire' => 60,
+            'throttle' => 60,
+        ],   
     ],
 
     /*

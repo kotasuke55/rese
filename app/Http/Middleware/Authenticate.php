@@ -7,6 +7,10 @@ use Illuminate\Support\Facades\Route;
 
 class Authenticate extends Middleware
 {
+    //userとadminの名前付きルートを定義
+    protected $user_root = 'login';
+    protected $admin_root = 'admin.login';
+
     /**
      * Get the path the user should be redirected to when they are not authenticated.
      *
@@ -15,9 +19,12 @@ class Authenticate extends Middleware
      */
     protected function redirectTo($request)
     {
-    if (! $request->expectsJson()) {
-        if($request->is('admin/*')) return route('admin.login');
-        return route('login');
-    }
+        if (! $request->expectsJson()) {
+            if(Route::is('admin.*')){
+                return route($this->admin_root);
+            }else{
+                return route($this->user_root);
+            }
+        }
     }
 }

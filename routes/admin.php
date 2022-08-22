@@ -8,14 +8,12 @@ use App\Http\Controllers\Admin\Auth\NewPasswordController;
 use App\Http\Controllers\Admin\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Admin\Auth\RegisteredUserController;
 use App\Http\Controllers\Admin\Auth\VerifyEmailController;
+use App\Http\Controllers\AdminController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/register', [RegisteredUserController::class, 'create'])
-                ->middleware('guest:admin')
-                ->name('register');
 
-Route::post('/register', [RegisteredUserController::class, 'store'])
-                ->middleware('guest:admin');
+
+
 
 Route::get('/login', [AuthenticatedSessionController::class, 'create'])
                 ->middleware('guest:admin')
@@ -62,3 +60,11 @@ Route::post('/confirm-password', [ConfirmablePasswordController::class, 'store']
 Route::post('/logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->middleware('auth:admin')
                 ->name('logout');
+
+Route::get('/admin',[AdminController::class,'index'])
+                ->middleware('auth:admin')
+                ->name('admin');
+
+Route::post('admin/create',[AdminController::class,'create'])
+                ->middleware('auth:admin')
+                ->name('create');
