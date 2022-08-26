@@ -19,9 +19,11 @@ class CreateRepresentativesTable extends Migration
             $table->string('email')->unique();
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
-            $table->bigInteger('shop_id')->nullable();
+            $table->unsignedBigInteger('shop_id')->nullable();
             $table->rememberToken();
             $table->timestamps();
+
+            $table->foreign('shop_id')->references('id')->on('shops');
         });
     }
 

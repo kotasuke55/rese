@@ -9,6 +9,7 @@ use App\Http\Controllers\Representative\Auth\PasswordResetLinkController;
 use App\Http\Controllers\Representative\Auth\RegisteredUserController;
 use App\Http\Controllers\Representative\Auth\VerifyEmailController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\RepresentativeController;
 
 Route::middleware('guest:representative')->group(function () {
 
@@ -51,3 +52,14 @@ Route::middleware('auth:representative')->group(function () {
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
 });
+    Route::get('management',[RepresentativeController::class,'index']);
+
+    Route::post('create',[RepresentativeController::class,'create']);
+
+    Route::post('select',[RepresentativeController::class,'find']);
+                
+    Route::post('update',[RepresentativeController::class,'update']);
+
+    Route::post('reserve',[RepresentativeController::class,'reserve']);
+
+    Route::post('image',[RepresentativeController::class,'image']);

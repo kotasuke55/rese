@@ -21,7 +21,7 @@ class RegisteredUserController extends Controller
      */
     public function create()
     {
-        return view('auth.register');
+        return view('representative.auth.register');
     }
 
     /**
@@ -46,6 +46,6 @@ class RegisteredUserController extends Controller
 
        
 
-        return view('/thanks');
+        return redirect(RouteServiceProvider::REPRESENTATIVE_HOME);
     }
 }

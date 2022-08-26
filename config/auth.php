@@ -77,7 +77,7 @@ return [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
         ],
-        'representative' => [
+        'representatives' => [
             'driver' => 'eloquent',
             'model' => App\Models\Representative::class,
         ],

@@ -12,12 +12,14 @@
         <h1>店舗代表者を作成する</h1>
         <form action="admin/create" method="post">
         @csrf
-            <p>代表者名</p>
-            <input type="text" name="name">
-            <p>メールアドレス</p>
-            <input type="text" name="email">
-            <p>パスワード</p>
-            <input type="text" name="password">
+            <p>代表者名</p><span>必須</span>
+            <input type="text" name="name" required>
+            <p>メールアドレス</p><span>必須</span>
+            <input type="text" name="email" required>
+            <p>パスワード</p><span>必須</span>
+            <input type="text" name="password" required>
+            <p>店舗ID</p>
+            <input type="number" name="shop_id">
             <br>
             <button>送信</button>
         </form>

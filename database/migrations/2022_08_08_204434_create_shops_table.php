@@ -20,6 +20,7 @@ class CreateShopsTable extends Migration
             $table->string('img');
             $table->unsignedBigInteger('genre_id');
             $table->unsignedBigInteger('area_id');
+            $table->bigInteger('representative_id')->nullable();
             $table->timestamp('created_at')->useCurrent()->nullable();
             $table->timestamp('updated_at')->useCurrent()->nullable();
 

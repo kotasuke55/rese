@@ -17,7 +17,8 @@ class Shop extends Model
         'content',
         'img',
         'area_id',
-        'genre_id'
+        'genre_id',
+        'representative_id'
     ];
 
     public function likes() {
@@ -41,6 +42,11 @@ class Shop extends Model
     public function evalution()
     {
       return $this->hasOne('App\Models\Evalution');
+    }
+
+    public function representative()
+    {
+        return $this->belongsTo('App\Models\Representative');
     }
 
       public function is_liked_by_auth_user()

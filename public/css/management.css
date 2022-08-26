@@ -1,0 +1,125 @@
+.main {
+  width: 95%;
+  margin: 20px auto 100px;
+}
+
+h2 {
+  padding-right: 30px;
+  margin: 30px 0;
+  text-align: end;
+}
+
+.create {
+  width: 80%;
+  margin: 0 auto;
+  border: 3px solid lightgray;
+  padding: 20px;
+}
+
+.ttl {
+  font-size: 28px;
+  margin: 0 0 20px 30px;
+}
+
+table th {
+  text-align: left;
+  padding-right: 30px;
+  font-size: 24px;
+  vertical-align: middle;
+}
+
+table td {
+  width: 80%;
+}
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+
+button {
+  padding: 10px 15px;
+  margin-top: 10px;
+}
+
+.edit {
+  width: 80%;
+  margin: 40px auto;
+  border: 3px solid lightgray;
+  padding: 20px;
+  height: 300px;
+}
+
+select {
+  width: 70%;
+  margin: 0 0 20px 30px;
+}
+
+h3 {
+  margin: 50px;
+  font-size: 28px;
+}
+
+.btn {
+  margin-left: 400px;
+}
+
+select {
+  padding: 15px 0;
+}
+
+.reserves {
+  width: 80%;
+  margin: 0 auto;
+  border: 3px solid lightgray;
+  padding: 20px;
+}
+
+.reserve {
+  width: 80%;
+  margin: 0 auto;
+  border: 3px solid lightgray;
+  padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+h4 {
+  font-size: 30px;
+  padding-bottom: 15px;
+}
+
+.content {
+  background-color: lightcyan;
+  padding: 20px;
+  margin: 20px 0 70px;
+  width: calc((95% - 50px * 1) / 2);
+}
+
+.reserve-table {
+  border-collapse: separate;
+  border-spacing: 8px 12px;
+}
+
+.reserve-table th {
+  font-size: 20px;
+}
+
+.reserve-table td {
+  font-size: 28px;
+}
+
+.shop-name {
+  text-align: center;
+  font-size: 34px;
+  font-weight: bold;
+}
+
+.images {
+  width: 80%;
+  margin: 50px auto;
+  border: 3px solid lightgray;
+  padding: 20px;
+}

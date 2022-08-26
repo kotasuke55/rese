@@ -10,6 +10,7 @@ class Authenticate extends Middleware
     //userとadminの名前付きルートを定義
     protected $user_root = 'login';
     protected $admin_root = 'admin.login';
+    protected $representative_root = 'representative.login';
 
     /**
      * Get the path the user should be redirected to when they are not authenticated.
@@ -22,9 +23,10 @@ class Authenticate extends Middleware
         if (! $request->expectsJson()) {
             if(Route::is('admin.*')){
                 return route($this->admin_root);
-            }else{
-                return route($this->user_root);
-            }
+            }elseif(Route::is('representative.*')) {
+                return route($this->representative_root);
+            }else return route($this->user_root);
+            
         }
     }
 }
