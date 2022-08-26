@@ -38,15 +38,16 @@ svg {
   width: 86%;
   margin:100px auto;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: left;
 }
 
 .shop__card {
-  width: calc((100% - 50px * 1) / 4);
+  width: calc((100% - 50px) / 4);
   border-radius: 8px;
   box-shadow: 5px 5px 5px lightgray;
   margin-bottom: 30px;
   background: #fff;
+  margin-right: 10px;
 }
 
 .shop__img {

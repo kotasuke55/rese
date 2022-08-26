@@ -18,7 +18,6 @@ use App\Http\Controllers\EvaluationController;
 | contains the "web" middleware group. Now create something great!
 |
 */
-
 Route::get('/',[ShopController::class,'index']);
 Route::post('/detail',[ShopController::class,'detail']);
 Route::post('/like',[LikeController::class,'like']);

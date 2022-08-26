@@ -24,7 +24,7 @@
       @error('comment')
         <p>{{ $message }}</p>
       @enderror
-      <textarea name="comment" class="comment" cols="70" rows="10" required></textarea>
+      <textarea name="comment" class="comment" cols="70" rows="10"></textarea>
       <input type="hidden" name="user_id" value="{{ $reserve->user->id }}">
       <input type="hidden"  name="shop_id" value="{{ $reserve->shop->id }}">
       <input type="hidden" name="id" value="{{ $reserve->id }}">
