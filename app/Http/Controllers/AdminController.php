@@ -12,12 +12,16 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Representative;
+use App\Models\User;
+use Mail;
+use App\Mail\SendTestMail;
 
 class AdminController extends Controller
 {
     public function index()
     {
-        return view('admin.auth.admin');
+        $users = User::all();
+        return view('admin.auth.admin',compact('users'));
     }
 
     public function create(Request $request)
@@ -28,5 +32,28 @@ class AdminController extends Controller
             'password' => Hash::make($request->password),
         ]);
         return view('admin.auth.admin');
+    }
+
+    public function send(Request $request)
+    {
+        $user = User::where('id',$request->id)->first();
+        
+        $to = [
+            [
+                'email' => $user->email,
+                'name' => $user->name
+            ],
+
+        ];
+        Mail::to($to)->send(new SendTestMail($user));
+
+        return view('admin.auth.mail');
+    }
+
+        protected function schedule(Schedule $schedule)
+    {
+        $schedule->call(function () {
+            DB::table('recent_users')->delete();
+        })->daily();
     }
 }

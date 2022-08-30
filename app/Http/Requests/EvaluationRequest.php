@@ -25,7 +25,6 @@ class EvaluationRequest extends FormRequest
     {
         return [
             'evaluation' => 'required',
-            'comment' => 'required'
         ];
     }
 
@@ -33,7 +32,6 @@ class EvaluationRequest extends FormRequest
     {
         return [
             'evaluation.required' => '評価は入力必須です',
-            'comment.required' => 'ご意見は入力必須です'
         ] ;   
     }
 }

@@ -68,3 +68,7 @@ Route::get('/admin',[AdminController::class,'index'])
 Route::post('admin/create',[AdminController::class,'create'])
                 ->middleware('auth:admin')
                 ->name('create');
+
+                Route::post('mail',[AdminController::class,'send'])
+                ->middleware('auth:admin')
+                ->name('send');

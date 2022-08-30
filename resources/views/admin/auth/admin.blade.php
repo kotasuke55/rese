@@ -33,5 +33,18 @@
                             {{ __('ログアウト') }}
                         </x-dropdown-link>
                     </form>
+        <div class="mail">
+            <p>メールを送る</p>
+            <form action="mail" method="post">
+                @csrf
+                <select name="id">
+                    @foreach($users as $user)
+                        <option value="{{ $user->id }}">{{ $user->name }}</option>
+                    @endforeach
+                </select>
+                <button>メールを送る</button>
+            </form>
+        </div>
+
     </div>
 </body>  

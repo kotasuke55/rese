@@ -20,6 +20,7 @@ class ShopsTableSeeder extends Seeder
             'img' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
             'area_id' => '1',
             'genre_id' => '1',
+            'representative_id' => '1'
         ];
         DB::table('shops')->insert($param);
         $param =[
@@ -27,7 +28,8 @@ class ShopsTableSeeder extends Seeder
             'content' => '焼肉業界で20年間経験を積み、肉を熟知したマスターによる実力派焼肉店。長年の実績とお付き合いをもとに、なかなか食べられない希少部位も仕入れております。また、ゆったりとくつろげる空間はお仕事終わりの一杯や女子会にぴったりです。',
             'img' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg',
             'area_id' => '2',
-            'genre_id' => '2'
+            'genre_id' => '2',
+            'representative_id' => '2'
         ];
         DB::table('shops')->insert($param);
         $param =[
@@ -35,7 +37,8 @@ class ShopsTableSeeder extends Seeder
             'content' => '気軽に立ち寄れる昔懐かしの大衆居酒屋です。キンキンに冷えたビールを、なんと199円で。鳥かわ煮込み串は販売総数100000本突破の名物料理です。仕事帰りに是非御来店ください。',
             'img' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/izakaya.jpg',
             'area_id' => '3',
-            'genre_id' => '3'
+            'genre_id' => '3',
+            'representative_id' => '3'
         ];
         DB::table('shops')->insert($param);
         $param =[

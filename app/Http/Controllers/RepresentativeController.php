@@ -13,6 +13,7 @@ use Illuminate\Validation\Rules;
 use App\Http\Requests\RegisterRequest;
 use App\Models\Shop;
 use App\Models\Reserve;
+use Illuminate\Support\Facades\Storage;
 
 class RepresentativeController extends Controller
 {
@@ -55,7 +56,10 @@ class RepresentativeController extends Controller
 
     public function image(Request $request)
     {
-        $request->file('file')->storeAs('public','upload.jpg');
+        $id = $request->shop_id;
+        $image = $request->file('file');
+        
+        Storage::putFileAs("public/store/{$id}",$image,'upload.jpg');
         return redirect()->back();
     }
 }

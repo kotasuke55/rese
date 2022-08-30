@@ -19,6 +19,8 @@ use App\Http\Controllers\EvaluationController;
 |
 */
 Route::get('/',[ShopController::class,'index']);
+
+Route::middleware('verified')->group(function () {
 Route::post('/detail',[ShopController::class,'detail']);
 Route::post('/like',[LikeController::class,'like']);
 Route::post('/unlike',[LikeController::class,'unlike']);
@@ -32,10 +34,11 @@ Route::post('reserve/update',[ReserveController::class,'update']);
 Route::post('evaluation',[EvaluationController::class,'index']);
 Route::post('evaluation/create',[EvaluationController::class,'create']);
 Route::get('evaluation',[EvaluationController::class,'index']);
-
+});
 Route::get('/dashboard', function () {
     return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
 
 require __DIR__.'/auth.php';
 
@@ -57,3 +60,4 @@ Route::prefix('representative')->name('representative.')->group(function(){
     
     require __DIR__.'/representative.php';
 });
+

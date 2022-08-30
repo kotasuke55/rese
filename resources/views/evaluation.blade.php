@@ -21,9 +21,6 @@
       <input type="radio" name="evaluation" value="4">不満
       <input type="radio" name="evaluation" value="5">とても不満
       <p>ご意見</p>
-      @error('comment')
-        <p>{{ $message }}</p>
-      @enderror
       <textarea name="comment" class="comment" cols="70" rows="10"></textarea>
       <input type="hidden" name="user_id" value="{{ $reserve->user->id }}">
       <input type="hidden"  name="shop_id" value="{{ $reserve->shop->id }}">

@@ -72,12 +72,14 @@
       <p class="ttl">店舗画像を保存する</p>
       <form action="image" method="post" enctype='multipart/form-data'>
         @csrf
-        <input type="file" name="file">
+        <input type="file" name="file" required>
+        <input class="shop_id" type="number" name="shop_id" placeholder="店舗ID" required>
         <button>アップロード</button>
       </form>
       <a href="/storage/upload.jpg">アップロードファイル</a>
       {{ asset('storage/upload.jpg') }}
-      <img src="{{asset('storage/upload.jpg')}}" alt="">
+      
+      <img src="{{asset('storage/store/1/upload.jpg')}}" alt="">
     </div>
   </div>
 </body>

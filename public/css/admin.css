@@ -29,3 +29,11 @@ button {
 span {
   color: red;
 }
+
+.mail {
+  margin-top: 50px;
+}
+
+select {
+  padding: 10px 50px;
+}

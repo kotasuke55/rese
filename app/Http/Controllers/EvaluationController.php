@@ -23,7 +23,6 @@ class EvaluationController extends Controller
         $evaluation = $request->all();
         unset($evaluation['_token']);
         unset($evaluation['id']);
-        dd($evaluation);
         Evaluation::create($evaluation);
         Reserve::find($request->id)->delete();
         return redirect('mypage');
