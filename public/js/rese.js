@@ -12,14 +12,14 @@ target.addEventListener('click', () => {
   authNav.classList.toggle('in');
 });
 
-//予約時の日付の初期値を次の日からにする記述
+//予約時の日付の初期値を当日にする記述
 var date = new Date();
 var yyyy = date.getFullYear();
 var mm = ("0" + (date.getMonth() + 1)).slice(-2);
 var dd = ("0" + (date.getDate() + 1)).slice(-2);
 document.getElementById("date").value = yyyy + '-' + mm + '-' + dd;
 
-//予約の日付を次の日からにする記述
+//予約の日付を当日からにする記述
 document.getElementById("date").min = yyyy + '-' + mm + '-' + dd;
 
 //予約時の入力をリアルタイムで反映させる記述

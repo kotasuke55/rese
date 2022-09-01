@@ -55,6 +55,11 @@
             </form>
           @endif
         </div>
+        <form action="qrcode" method="post">
+          @csrf
+          <input type="hidden" name="id" value="{{ $reserve->id }}">
+          <button class="edit__btn">QRコードを生成する</button>
+        </form>
       </div>
       @endforeach
     </div>

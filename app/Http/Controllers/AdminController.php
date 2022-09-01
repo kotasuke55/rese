@@ -41,7 +41,7 @@ class AdminController extends Controller
         $to = [
             [
                 'email' => $user->email,
-                'name' => $user->name
+                'name' => $user->name.'様'
             ],
 
         ];
@@ -50,10 +50,4 @@ class AdminController extends Controller
         return view('admin.auth.mail');
     }
 
-        protected function schedule(Schedule $schedule)
-    {
-        $schedule->call(function () {
-            DB::table('recent_users')->delete();
-        })->daily();
-    }
 }

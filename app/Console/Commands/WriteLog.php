@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use Illuminate\Console\Command;
 use App\Models\Reserve;
 use Mail;
+
 class WriteLog extends Command
 {
     /**
@@ -19,7 +20,7 @@ class WriteLog extends Command
      *
      * @var string
      */
-    protected $description = 'write info messages in log file';
+    protected $description = '予約確認メール送信';
 
     /**
      * Create a new command instance.
@@ -39,12 +40,14 @@ class WriteLog extends Command
     public function handle()
     {
         $reserves = Reserve::where('date','=',date("Y/m/d"))->get();
-        foreach($reserves as $reserve){
-            Mail::raw($reserve->date,function($message) {
+        if(!empty($reserves)){
+            foreach($reserves as $reserve) {
+                $param = ['reserve'=>$reserve];
+                Mail::send('emails.reserve',$param,function($message) use ($reserve) {
                 $message->to($reserve->user->email)->subject('予約日です');
             });
+            }
         }
-
     } 
 
 }

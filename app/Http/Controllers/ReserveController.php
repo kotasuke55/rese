@@ -34,4 +34,11 @@ class ReserveController extends Controller
         Reserve::where('id',$request->id)->update($reserve);
         return redirect('mypage');
     }
+
+    public function qrcode(Request $request)
+    {
+        
+        $reserve = Reserve::find($request->id);
+        return view('qrcode',compact('reserve'));
+    }
 }
