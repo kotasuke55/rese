@@ -1,4 +1,11 @@
+<div class="qr">
+  {!! QrCode::size(300)->generate(route('inquiry',['reserve'=>$reserve])) !!}
+</div>
 
-{!! QrCode::size(300)->generate('{{$reserve}}') !!}
-
+<style>
+  .qr {
+    text-align:center;
+    margin-top:100px;
+  }
+</style>
 

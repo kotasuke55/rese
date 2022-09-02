@@ -134,6 +134,10 @@ table th {
   text-align: center;
 }
 
+.error {
+  color: red;
+}
+
 @media screen and (max-width: 768px) {
   .reserve {
     width: 53%;

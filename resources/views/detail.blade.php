@@ -23,8 +23,14 @@
     <input type="hidden" name="shop_id" value="{{ $shop->id }}">
     <div class="reserve__inner">
       <h2 class="reserve__ttl">予約</h2>
+      @error('date')
+        <p class="error">{{ $message }}</p>
+      @enderror
       <input type="date" name="date" id="date">
       <div class="select">
+        @error('time')
+          <p class="error">{{ $message }}</p>
+        @enderror
         <select name="time" id="time">
         @for($time=10;$time<=22;$time++)
           <option value="{{ $time }}:00">{{$time}}:00</option>
@@ -33,6 +39,9 @@
         </select>
       </div>
       <div class="select">
+        @error('number')
+          <p class="error">{{ $message }}</p>
+        @enderror
         <select name="number" id="number">
         @for($i=1; $i<=8; $i++)
         <option value="{{ $i }}">{{$i}}人</option>

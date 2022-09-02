@@ -8,8 +8,21 @@
     <title>Rese</title>
 </head>
 <body>
-  <p>予約の名前{{ $reserve->user->name }}</p>
-  <p>予約の日にち{{ $reserve->date }}</p>
-  <p>予約の時間{{ $reserve->time }}</p>
-  <p>予約の人数{{ $reserve->number }}</p>
+  <div class="reserve">
+    <p>予約の名前 : {{ $reserve->user->name }}様</p>
+    <p>予約の日にち : {{ $reserve->date }}</p>
+    <p>予約の時間 : {{ $reserve->time }}</p>
+    <p>予約の人数 : {{ $reserve->number }}名様</p>
+  </div>
 </body>
+
+<style>
+  .reserve {
+    text-align:center;
+    margin-top:100px;
+  } 
+
+  p {
+    font-size:30px;
+  }
+</style>

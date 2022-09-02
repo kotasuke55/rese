@@ -76,10 +76,10 @@
         <input class="shop_id" type="number" name="shop_id" placeholder="店舗ID" required>
         <button>アップロード</button>
       </form>
-      <a href="/storage/upload.jpg">アップロードファイル</a>
-      {{ asset('storage/upload.jpg') }}
+      <a href="/storage/store/1/upload.jpg">アップロードファイル</a>
+      {{ asset('storage/store/{$id}/upload.jpg') }}
       
-      <img src="{{asset('storage/store/1/upload.jpg')}}" alt="">
+      <img src="{{asset('storage/store/2/upload.jpg')}}" alt="">
     </div>
   </div>
 </body>

@@ -36,7 +36,7 @@ Route::post('evaluation/create',[EvaluationController::class,'create']);
 Route::get('evaluation',[EvaluationController::class,'index']);
 Route::post('qrcode',[ReserveController::class,'qrcode']);
 });
-
+Route::get('inquiry',[ReserveController::class,'inquiry'])->name('inquiry');
 Route::get('/dashboard', function () {
     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
