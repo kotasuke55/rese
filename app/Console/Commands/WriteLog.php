@@ -44,7 +44,7 @@ class WriteLog extends Command
             foreach($reserves as $reserve) {
                 $param = ['reserve'=>$reserve];
                 Mail::send('emails.reserve',$param,function($message) use ($reserve) {
-                $message->to($reserve->user->email)->subject('予約日です');
+                    $message->to($reserve->user->email)->subject('予約日です');
             });
             }
         }

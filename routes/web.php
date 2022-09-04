@@ -6,6 +6,7 @@ use App\Http\Controllers\ShopController;
 use App\Http\Controllers\LikeController;
 use App\Http\Controllers\ReserveController;
 use App\Http\Controllers\EvaluationController;
+use App\Http\Controllers\PaymentController;
 
 
 /*
@@ -35,6 +36,9 @@ Route::post('evaluation',[EvaluationController::class,'index']);
 Route::post('evaluation/create',[EvaluationController::class,'create']);
 Route::get('evaluation',[EvaluationController::class,'index']);
 Route::post('qrcode',[ReserveController::class,'qrcode']);
+Route::get('payment',[PaymentController::class,'index']);
+Route::post('payment',[PaymentController::class,'payment'])->name('payment');
+Route::get('complete',[PaymentController::class,'complete'])->name('complete');
 });
 Route::get('inquiry',[ReserveController::class,'inquiry'])->name('inquiry');
 Route::get('/dashboard', function () {
