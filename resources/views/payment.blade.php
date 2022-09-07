@@ -9,18 +9,17 @@
 </head>
 <body>
     <form action="{{ asset('payment') }}" method="POST" class="text-center mt-5">
-        {{ csrf_field() }}
+        @csrf
+        <p>お支払い金額：<input type="text" name="amount"></p>
         <script
             src="https://checkout.stripe.com/checkout.js" class="stripe-button"
             data-key="{{ env('STRIPE_KEY') }}"
-            data-amount="1000"
             data-name="Stripe Demo"
             data-label="決済をする"
             data-description="これはStripeのデモです。"
-            data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-            data-locale="auto"
-            data-currency="JPY">
+            data-currency="jpy">
         </script>
     </form>
+    <a href="/">戻る</a>
 </body>
 </html>

@@ -9,5 +9,6 @@
 </head>
 <body>
     <p class="text-center mt-5">決済が完了しました！</p>
+    <a href="/">戻る</a>
 </body>
 </html>
