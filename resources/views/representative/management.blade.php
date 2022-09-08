@@ -25,7 +25,7 @@
           </tr>
           <tr>
             <th>店舗画像(URL)</th>
-            <td><input type="text" name="img"></td>
+            <td><input type="text" name="img" value=" http://127.0.0.1:8000/storage/store/店舗ID/画像の名前"></td>
           </tr>
           <tr>
             <th>エリア番号</th>
@@ -76,10 +76,6 @@
         <input class="shop_id" type="number" name="shop_id" placeholder="店舗ID" required>
         <button>アップロード</button>
       </form>
-      <a href="/storage/store/1/upload.jpg">アップロードファイル</a>
-      {{ asset('storage/store/{$id}/upload.jpg') }}
-      
-      <img src="{{asset('storage/store/2/upload.jpg')}}" alt="">
     </div>
   </div>
 </body>

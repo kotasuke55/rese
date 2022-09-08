@@ -34,8 +34,6 @@ class RegisteredUserController extends Controller
      */
     public function store(RegisterRequest $request)
     {
-
-
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
@@ -43,8 +41,6 @@ class RegisteredUserController extends Controller
         ]);
 
         event(new Registered($user));
-
-       
 
         return view('/thanks');
     }

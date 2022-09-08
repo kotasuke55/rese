@@ -58,8 +58,9 @@ class RepresentativeController extends Controller
     {
         $id = $request->shop_id;
         $image = $request->file('file');
+        $name = $request->file('file')->getClientOriginalName();
         
-        Storage::putFileAs("public/store/{$id}",$image,'upload.jpg');
+        Storage::putFileAs("public/store/{$id}",$image,$name);
         return redirect()->back();
     }
 }
