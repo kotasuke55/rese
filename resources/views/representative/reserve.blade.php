@@ -9,7 +9,6 @@
 </head>
 <body>
   <div class="main">
-    <p class="shop-name">選択中の店舗：{{ $reserves[0]->shop->shop }}</p>
     <div class="reserve">      
       @foreach($reserves as $reserve)
         <div class="content">

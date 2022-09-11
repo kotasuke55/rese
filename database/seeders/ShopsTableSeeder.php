@@ -20,7 +20,6 @@ class ShopsTableSeeder extends Seeder
             'img' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/sushi.jpg',
             'area_id' => '1',
             'genre_id' => '1',
-            'representative_id' => '1'
         ];
         DB::table('shops')->insert($param);
         $param =[
@@ -29,7 +28,6 @@ class ShopsTableSeeder extends Seeder
             'img' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/yakiniku.jpg',
             'area_id' => '2',
             'genre_id' => '2',
-            'representative_id' => '2'
         ];
         DB::table('shops')->insert($param);
         $param =[
@@ -38,7 +36,6 @@ class ShopsTableSeeder extends Seeder
             'img' => 'https://coachtech-matter.s3-ap-northeast-1.amazonaws.com/image/izakaya.jpg',
             'area_id' => '3',
             'genre_id' => '3',
-            'representative_id' => '3'
         ];
         DB::table('shops')->insert($param);
         $param =[
