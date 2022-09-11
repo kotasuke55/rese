@@ -31,7 +31,7 @@ class AdminController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
         ]);
-        return view('admin.auth.admin');
+        return redirect()->back();
     }
 
     public function send(Request $request)
@@ -47,7 +47,7 @@ class AdminController extends Controller
         ];
         Mail::to($to)->send(new SendTestMail($user));
 
-        return redirect('admin.auth.admin');
+        return view('admin.auth.mail');
     }
 
 }
