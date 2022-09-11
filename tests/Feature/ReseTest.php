@@ -13,15 +13,15 @@ class ReseTest extends TestCase
 
     public function testRese()
     {
-       User::factory()->create([
-            'name' => 'aaa',
-            'email' => 'test@example.com',
-            'password' => '12345678'
-       ]);
-       $this->assertDatabaseHas('users',[
-            'name' => 'aaa',
-            'email' => 'test@example.com',
-            'password' => '12345678'
-       ]);
+       $response = $this->get('/');
+       $response->assertStatus(200);
+    }
+
+    public function test_index()
+    {
+        $user = User::factory()->make();
+        $this->actingAs($user);
+        $response = $this->get('/');
+        $response->assertStatus(200);
     }
 }
