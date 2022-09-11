@@ -47,7 +47,7 @@ class AdminController extends Controller
         ];
         Mail::to($to)->send(new SendTestMail($user));
 
-        return view('admin.auth.mail');
+        return redirect('admin.auth.admin');
     }
 
 }
