@@ -8,7 +8,17 @@
     <title>Management</title>
 </head>
 <body>
-  <h2>ログイン中のuser {{$user->name}}</h2>
+  <div class="login">
+    <h2>ログイン中のuser {{$user->name}}</h2>
+    <form method="POST" action="{{ route('representative.logout') }}">
+      @csrf
+      <x-dropdown-link :href="route('representative.logout')"
+                      onclick="event.preventDefault();
+                      this.closest('form').submit();">
+                      {{ __('ログアウト') }}
+      </x-dropdown-link>
+    </form>
+  </div>
   <div class="main">
     <div class="create">
       <p class="ttl">店舗の作成</p>

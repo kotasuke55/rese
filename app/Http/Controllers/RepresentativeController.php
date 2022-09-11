@@ -45,6 +45,7 @@ class RepresentativeController extends Controller
         $form = $request->all();
         unset($form['_token']);
         Shop::where('id',$request->id)->update($form);
+        Representative::where('id',$request->representative_id)->first()->update(['shop_id'=>$request->id]);
         return redirect('representative/management');
     }
 

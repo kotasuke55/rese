@@ -30,6 +30,7 @@ class AdminController extends Controller
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'shop_id' => $request->shop_id
         ]);
         return redirect()->back();
     }

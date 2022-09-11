@@ -23,16 +23,15 @@
             <br>
             <button>送信</button>
         </form>
-                    <!-- Authentication -->
-                    <form method="POST" action="{{ route('admin.logout') }}">
-                        @csrf
+        <form method="POST" action="{{ route('admin.logout') }}">
+            @csrf
 
-                        <x-dropdown-link :href="route('admin.logout')"
-                                onclick="event.preventDefault();
-                                            this.closest('form').submit();">
-                            {{ __('ログアウト') }}
-                        </x-dropdown-link>
-                    </form>
+            <x-dropdown-link :href="route('admin.logout')"
+                    onclick="event.preventDefault();
+                    this.closest('form').submit();">
+                {{ __('ログアウト') }}
+            </x-dropdown-link>
+        </form>
         <div class="mail">
             <p>メールを送る</p>
             <form action="mail" method="post">
