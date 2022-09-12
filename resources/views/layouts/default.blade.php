@@ -28,6 +28,7 @@
         </form>
       </li>
       <li><a href="/mypage">Mypage</a></li>
+      <li><a href="/payment">Payment</a></li>
     </ul>
   </nav>
   @endauth
