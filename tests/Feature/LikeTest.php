@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 
 class LikeTest extends TestCase
 {
-    use RefreshDatabase;
     /**
      * A basic feature test example.
      *
@@ -21,17 +20,12 @@ class LikeTest extends TestCase
      */
     public function test_example()
     {
-        
-        $shop = Shop::all()->first();
         $user = User::factory()->make();
-        $shop_id = $shop->id;
-        $user_id = $user->id;
-        $this->actingAs($user);
-        $response = $this->post('like',[
-            'shop_id' => $shop_id,
-            'user_id' => $user_id
-        ]);
-        
-        $response->assertRedirect('/');
+        $shop = Shop::all();
+        $like = Like::factory()->create([
+                        'user_id' => $this->user->id,
+                        'shop_id' => $this->shop->id
+                        ]);
+                        dd($like);
     }
 }
