@@ -28,9 +28,7 @@
 <div class="shop__content">
   @foreach($shops as $shop)
     <div class="shop__card">
-      <!-- localでの表示 -->
-      <!-- <img class="shop__img" src="{{$shop->img}}" alt="">-->
-      <img class="shop__img" src="data:image/jpg;base64,<?= $shop->image ?>" alt="">
+      <img class="shop__img" src="{{$shop->img}}" alt="">
       <div class="card__text">
         <p class="shop-name">{{$shop->shop}}</p>
         <div class="hashutag">
