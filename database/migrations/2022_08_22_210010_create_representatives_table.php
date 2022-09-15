@@ -23,7 +23,7 @@ class CreateRepresentativesTable extends Migration
             $table->rememberToken();
             $table->timestamps();
 
-            $table->foreign('shop_id')->references('id')->on('shops');
+            $table->foreign('shop_id')->references('id')->on('shops')->cascadeOnDelete();
         });
     }
 

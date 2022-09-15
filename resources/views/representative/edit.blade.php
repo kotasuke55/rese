@@ -52,8 +52,16 @@
             </tr>
         </table>
         <div class="btn">
-            <a href="javascript:history.back()">戻る</a>
             <button>更新する</button>    
+        </div>
+    </form>
+    <form action="representative/delete"  method="post">
+        @csrf
+        <input type="hidden" name="id" value="{{ $shop->id }}">
+        <input type="hidden" name="shop_id" value="">
+        <div class="btn">
+            <button>削除する</button>    
+            <a href="javascript:history.back()">戻る</a>
         </div>
     </form>
   </div>

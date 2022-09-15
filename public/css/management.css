@@ -18,7 +18,7 @@
 
 .ttl {
   font-size: 28px;
-  margin: 0 0 20px 30px;
+  margin-bottom: 20px;
 }
 
 table th {
@@ -33,7 +33,7 @@ table td {
 }
 
 input {
-  width: 100%;
+  width: 97%;
   padding: 10px;
   margin-bottom: 20px;
 }
@@ -52,8 +52,8 @@ button {
 }
 
 select {
-  width: 70%;
-  margin: 0 0 20px 30px;
+  width: 100%;
+  margin-bottom: 20px;
 }
 
 h3 {

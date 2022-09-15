@@ -27,23 +27,35 @@
         <table>
           <tr>
             <th>店舗名</th>
-            <td><input type="text" name="shop"></td>
+            <td><input type="text" name="shop" required></td>
           </tr>
           <tr>
             <th>お店の説明</th>
-            <td><input type="text" name="content"></td>
+            <td><input type="text" name="content" required></td>
           </tr>
           <tr>
             <th>店舗画像(URL)</th>
-            <td><input type="text" name="img" value=" http://127.0.0.1:8000/storage/store/店舗ID/画像の名前"></td>
+            <td><input type="text" name="img" value=" http://127.0.0.1:8000/storage/store/店舗ID/画像の名前" required></td>
           </tr>
           <tr>
             <th>エリア番号</th>
-            <td><input type="number" name="area_id"></td>
+            <td>
+              <select name="area_id">
+                @foreach($areas as $area)
+                  <option value="{{$area->id}}">{{ $area->name }}</option>
+                @endforeach
+              </select>
+            </td>
           </tr>
           <tr>
             <th>ジャンル番号</th>
-            <td><input type="number" name="genre_id"></td>
+            <td>
+              <select name="genre_id">
+                @foreach($genres as $genre)
+                  <option value="{{$genre->id}}">{{ $genre->name }}</option>
+                @endforeach
+              </select>
+            </td>
           </tr>
           <tr>
             <th>店舗代表者ID</th>

@@ -63,3 +63,5 @@ Route::middleware('auth:representative')->group(function () {
     Route::post('reserve',[RepresentativeController::class,'reserve']);
 
     Route::post('image',[RepresentativeController::class,'image']);
+    
+    Route::post('representative/delete',[RepresentativeController::class,'remove']);
