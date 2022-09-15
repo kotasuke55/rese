@@ -64,8 +64,7 @@ class RepresentativeController extends Controller
         $reserve_shops = Shop::where('representative_id', $auth_id)->get();
         $genres = Genre::all();
         $areas = Area::all();
-        return view('representative.management',compact('user','shops','representatives','reserve_shops','genres','areas'));
-        
+        return redirect('representative/management');
     }
 
     public function reserve(Request $request)
