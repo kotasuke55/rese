@@ -76,10 +76,11 @@ class RepresentativeController extends Controller
     public function image(Request $request)
     {
         $id = $request->shop_id;
-        $image = $request->file('file');
+        //$image = $request->file('file');
+        $image = base64_encode(file_get_contents($request->file->getRealPath()));
         $name = $request->file('file')->getClientOriginalName();
-        
-        Storage::putFileAs("public/store/{$id}",$image,$name);
+        $file = $request->file('file')->move('storage/store/'.$id,$name);
+        //Storage::putFileAs("public/store/{$id}",$image,$name);
         return redirect()->back();
     }
 }
