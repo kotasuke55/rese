@@ -28,7 +28,7 @@
 <div class="shop__content">
   @foreach($shops as $shop)
     <div class="shop__card">
-      <img class="shop__img" src="{{$shop->img}}" alt="">
+      <img class="shop__img" src="{{asset($shop->img)}}" alt="">
       <div class="card__text">
         <p class="shop-name">{{$shop->shop}}</p>
         <div class="hashutag">

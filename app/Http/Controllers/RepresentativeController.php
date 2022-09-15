@@ -56,7 +56,7 @@ class RepresentativeController extends Controller
     public function remove(Request $request)
     {
         Shop::find($request->id)->delete();
-
+        
         $user = Auth('representative')->user();
         $shops = Shop::all();
         $representatives = Representative::all();
@@ -64,7 +64,7 @@ class RepresentativeController extends Controller
         $reserve_shops = Shop::where('representative_id', $auth_id)->get();
         $genres = Genre::all();
         $areas = Area::all();
-        return redirect('representative/management');
+        return view('representative.management',compact('user','shops','representatives','reserve_shops','genres','areas'));
         
     }
 

@@ -91,6 +91,7 @@
       </form>
     </div>
     <div class="images">
+      <img src="{{ asset('storage/store/21/heart_shape-1.jpg')}}" alt="">
       <p class="ttl">店舗画像を保存する</p>
       <form action="image" method="post" enctype='multipart/form-data'>
         @csrf
