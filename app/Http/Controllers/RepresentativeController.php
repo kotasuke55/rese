@@ -65,7 +65,7 @@ class RepresentativeController extends Controller
     {
         $form = $request->all();
         unset($form['_token']);
-        Shop::find($id)->update($form);
+        Shop::find($request->id)->update($form);
         return redirect('representative/management');
     }
 
