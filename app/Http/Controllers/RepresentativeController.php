@@ -52,7 +52,8 @@ class RepresentativeController extends Controller
         //Storage::putFileAs("public/store/{$id}",$image,$name);
         //$update = "storage/store/{$id}/{$name}";
         //Shop::find($id)->update(['img' => $update]);
-        //return redirect()->back();
+
+        return redirect()->back();
     }
 
     public function find(Request $request)
@@ -90,7 +91,8 @@ class RepresentativeController extends Controller
             //'genre_id' => $request->genre_id,
             //'representative_id' => $request->representative_id
         //]);
-        //return redirect('representative/management');
+        
+        return redirect('representative/management');
     }
 
     public function remove(Request $request)
