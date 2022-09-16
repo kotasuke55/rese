@@ -34,7 +34,6 @@ class RepresentativeController extends Controller
     public function create(Request $request)
     {
         $image = base64_encode(file_get_contents($request->file->getRealPath()));
-        dd($image);
         $form  = [
             'shop' => $request->shop,
             'content' => $request->content,
