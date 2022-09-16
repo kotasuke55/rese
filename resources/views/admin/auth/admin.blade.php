@@ -18,8 +18,6 @@
             <input type="text" name="email" required>
             <p>パスワード</p><span>必須</span>
             <input type="text" name="password" required>
-            <p>店舗ID</p>
-            <input type="number" name="shop_id">
             <br>
             <button>送信</button>
         </form>
