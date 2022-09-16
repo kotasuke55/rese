@@ -4,7 +4,6 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Admin;
-use Illuminate\Support\Facades\DB;
 
 class AdminsTableSeeder extends Seeder
 {
@@ -17,7 +16,7 @@ class AdminsTableSeeder extends Seeder
     {
         Admin::create([
             'name' => 'test',
-            'email' => 'd@ff.com',
+            'email' => 'test@example.com',
             'password' => bcrypt('12345678'),
         ]);
     }
