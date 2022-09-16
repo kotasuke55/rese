@@ -33,7 +33,12 @@ class RepresentativeController extends Controller
 
     public function create(Request $request)
     {
-        $image = base64_encode(file_get_contents($request->file->getRealPath()));
+        //local環境
+        $name = $request->file('file')->getClientOriginalName();
+        $img =$request->file('file');
+
+        //↓heroku環境
+        //$image = base64_encode(file_get_contents($request->file->getRealPath()));
         $form  = [
             'shop' => $request->shop,
             'content' => $request->content,
@@ -42,7 +47,11 @@ class RepresentativeController extends Controller
             'genre_id' => $request->genre_id,
             'representative_id' => $request->representative_id
         ];
-        Shop::create($form);
+        $shop = Shop::create($form);
+        $id = $shop->id;
+        Storage::putFileAs("public/store/{$id}",$image,$name);
+        $update = storage_path("public/store/{$id}/{$name}");
+        Shop::find($id)->update(['img'=>$update]);
         return redirect()->back();
     }
 
