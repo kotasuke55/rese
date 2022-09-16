@@ -22,7 +22,7 @@
   <div class="main">
     <div class="create">
       <p class="ttl">店舗の作成</p>
-      <form action="create" method="post">
+      <form action="create" method="post" enctype='multipart/form-data'>
         @csrf
         <table>
           <tr>
@@ -35,7 +35,7 @@
           </tr>
           <tr>
             <th>店舗画像(URL)</th>
-            <td><input type="text" name="img" value=" http://127.0.0.1:8000/storage/store/店舗ID/画像の名前" required></td>
+            <td> <input type="file" name="file" required></td>
           </tr>
           <tr>
             <th>エリア番号</th>

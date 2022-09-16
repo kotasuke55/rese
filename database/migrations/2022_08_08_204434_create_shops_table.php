@@ -17,7 +17,7 @@ class CreateShopsTable extends Migration
             $table->bigIncrements('id');
             $table->string('shop');
             $table->text('content');
-            $table->string('img');
+            $table->text('img');
             $table->unsignedBigInteger('genre_id');
             $table->unsignedBigInteger('area_id');
             $table->bigInteger('representative_id')->nullable();
