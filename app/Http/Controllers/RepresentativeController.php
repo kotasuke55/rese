@@ -33,12 +33,8 @@ class RepresentativeController extends Controller
 
     public function create(Request $request)
     {
-        //local環境
-        $name = $request->file('file')->getClientOriginalName();
-        $img =$request->file('file');
-
-        //↓heroku環境
-        //$image = base64_encode(file_get_contents($request->file->getRealPath()));
+        //heroku環境でエンコードしたデータをmysqlに保存する
+        $image = base64_encode(file_get_contents($request->file->getRealPath()));
         $form  = [
             'shop' => $request->shop,
             'content' => $request->content,
@@ -48,10 +44,14 @@ class RepresentativeController extends Controller
             'representative_id' => $request->representative_id
         ];
         $shop = Shop::create($form);
-        $id = $shop->id;
-        Storage::putFileAs("public/store/{$id}",$image,$name);
-        $update = storage_path("public/store/{$id}/{$name}");
-        Shop::find($id)->update(['img'=>$update]);
+
+        // ↓local環境でmysqlにstorageのパスを保存する
+        //$name = $request->file('file')->getClientOriginalName();
+        //$image =$request->file('file');
+        //$id = $shop->id;
+        //Storage::putFileAs("public/store/{$id}",$image,$name);
+        //$update = "storage/store/{$id}/{$name}";
+        //$re=Shop::find($id)->update(['img' => $update]);
         return redirect()->back();
     }
 
@@ -65,22 +65,14 @@ class RepresentativeController extends Controller
     {
         $form = $request->all();
         unset($form['_token']);
-        Shop::where('id',$request->id)->update($form);
-        Representative::where('id',$request->representative_id)->first()->update(['shop_id'=>$request->id]);
+        Shop::find($id)->update($form);
         return redirect('representative/management');
     }
 
     public function remove(Request $request)
     {
         Shop::find($request->id)->delete();
-        
-        $user = Auth('representative')->user();
-        $shops = Shop::all();
-        $representatives = Representative::all();
-        $auth_id = $user->id;
-        $reserve_shops = Shop::where('representative_id', $auth_id)->get();
-        $genres = Genre::all();
-        $areas = Area::all();
+
         return redirect('representative/management');
     }
 

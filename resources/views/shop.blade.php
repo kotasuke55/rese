@@ -28,9 +28,15 @@
 <div class="shop__content">
   @foreach($shops as $shop)
     <div class="shop__card">
-      <!-- heroku環境 -->
-      <!-- <img class="shop__img" src="data:image/png;base64,<?= $shop->img ?>" alt=""> -->
+      <!-- ↓heroku環境での画像の表示 -->
+      @if($shop->id > 20)
+      <img class="shop__img" src="data:image/png;base64,<?= $shop->img ?>" alt="">
+      @else 
       <img class="shop__img" src="{{asset($shop->img)}}" alt="">
+      @endif
+
+      <!-- ↓local環境 -->
+      <!-- <img class="shop__img" src="{{asset($shop->img)}}" alt=""> -->
       <div class="card__text">
         <p class="shop-name">{{$shop->shop}}</p>
         <div class="hashutag">
