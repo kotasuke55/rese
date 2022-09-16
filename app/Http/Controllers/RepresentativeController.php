@@ -33,7 +33,17 @@ class RepresentativeController extends Controller
 
     public function create(Request $request)
     {
-        $form  = $request->all();
+        $image = base64_encode(file_get_contents($request->file->getRealPath()));
+        dd($image);
+        $form  = [
+            'shop' => $request->shop,
+            'content' => $request->content,
+            'img' => $image,
+            'area_id' => $request->area_id,
+            'genre_id' => $request->genre_id,
+            'representative_id' => $request->representative_id
+        ];
+        dd($form);
         Shop::create($form);
         return redirect()->back();
     }
