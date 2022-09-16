@@ -9,13 +9,13 @@
       <h2 class="shop__ttl">{{ $shop->shop }}</h2>
     </div>
       <!-- ↓heroku環境での画像の表示 -->
-      <!-- @if($shop->id > 20) -->
-      <!-- <img class="shop__img" src="data:image/png;base64,<?= $shop->img ?>" alt=""> -->
-      <!-- @else  -->
-      <!-- <img class="shop__img" src="{{asset($shop->img)}}" alt=""> -->
-      <!-- @endif -->
-      <!-- ↓local環境 -->
+      @if($shop->id > 20)
+      <img class="shop__img" src="data:image/png;base64,<?= $shop->img ?>" alt="">
+      @else 
       <img class="shop__img" src="{{asset($shop->img)}}" alt="">
+      @endif
+      <!-- ↓local環境 -->
+      <!-- <img class="shop__img" src="{{asset($shop->img)}}" alt=""> -->
     <div class="hashutag">
       <p>#{{ $shop->area->name }}</p>
       <p>#{{ $shop->genre->name }}</p>
