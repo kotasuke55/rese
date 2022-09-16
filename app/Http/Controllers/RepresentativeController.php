@@ -42,7 +42,6 @@ class RepresentativeController extends Controller
             'genre_id' => $request->genre_id,
             'representative_id' => $request->representative_id
         ];
-        dd($form);
         Shop::create($form);
         return redirect()->back();
     }
