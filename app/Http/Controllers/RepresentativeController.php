@@ -63,9 +63,33 @@ class RepresentativeController extends Controller
 
     public function update(Request $request)
     {
-        $form = $request->all();
+        //heroku環境でエンコードしたデータをmysqlに保存する
+        $image = base64_encode(file_get_contents($request->file->getRealPath()));
+        $form  = [
+            'shop' => $request->shop,
+            'content' => $request->content,
+            'img' => $image,
+            'area_id' => $request->area_id,
+            'genre_id' => $request->genre_id,
+            'representative_id' => $request->representative_id
+        ];
         unset($form['_token']);
         Shop::find($request->id)->update($form);
+
+        // ↓local環境でmysqlにstorageのパスを保存する
+        //$name = $request->file('file')->getClientOriginalName();
+        //$image =$request->file('file');
+        //$id = $request->id;
+        //Storage::putFileAs("public/store/{$id}",$image,$name);
+        //$update = "storage/store/{$id}/{$name}";
+        //Shop::find($request->id)->update([
+            //'shop' => $request->shop,
+            //'content' => $request->content,
+            //'img' => $update,
+            //'area_id' => $request->area_id,
+            //'genre_id' => $request->genre_id,
+            //'representative_id' => $request->representative_id
+        //]);
         return redirect('representative/management');
     }
 

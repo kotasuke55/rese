@@ -34,7 +34,7 @@
             <td><input type="text" name="content" required></td>
           </tr>
           <tr>
-            <th>店舗画像(URL)</th>
+            <th>店舗画像</th>
             <td> <input type="file" name="file" required></td>
           </tr>
           <tr>

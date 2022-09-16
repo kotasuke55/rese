@@ -10,7 +10,7 @@
 <body>
   <div class="main">
     <h3>店舗情報の更新</h3>
-    <form action="update" method="post">
+    <form action="update" method="post" enctype='multipart/form-data'>
         @csrf
         <input type="hidden" name="id" value="{{ $shop->id }}">
         <table>
@@ -27,9 +27,9 @@
                 </td>
             </tr>
             <tr>
-                <th>画像(URL)</th>
+                <th>画像</th>
                 <td>
-                    <input type="text" name="img" value="{{ $shop->img }}">
+                    <input type="file" name="file" value="{{ $shop->img }}" required>
                 </td>
             </tr>
             <tr>

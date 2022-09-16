@@ -11,7 +11,7 @@
       <!-- ↓heroku環境での画像の表示 -->
       @if($shop->id > 20)
       <img class="shop__img" src="data:image/png;base64,<?= $shop->img ?>" alt="">
-      @else -->
+      @else 
       <img class="shop__img" src="{{asset($shop->img)}}" alt="">
       @endif
       <!-- ↓local環境 -->
