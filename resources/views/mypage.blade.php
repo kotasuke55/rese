@@ -74,7 +74,7 @@
 
 
           <!-- ↓local環境 -->
-          <!-- <img class="shop__img" src="{{asset($like->shop->img)}}" alt=""> -->
+
           <div class="card__text">
             <p class="shop-name">{{$like->shop->shop}}</p>
             <div class="hashutag">
