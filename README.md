@@ -7,10 +7,10 @@
 
 ## アプリケーションURL
 https://rocky-hollows-86306.herokuapp.com  
-架空ユーザーが設定してあるのでそれでログインできます。
-・ユーザーname : rese
-email : rese@rese.com
-password : 12345678
+架空ユーザーが設定してあるのでそれでログインできます。  
+・ユーザーname : rese  
+email : rese@rese.com  
+password : 12345678  
 
 ・店舗代表者  
 name : 店舗代表者1  
