@@ -42,17 +42,17 @@
         </table>
         <div class="edit">
           @if(\Carbon\Carbon::now() < $reserve->date)
-            <form action="/edit" method="post">
-              @csrf
-              <input type="hidden" name="id" value="{{ $reserve->id }}">
-              <button class="edit__btn">変更する</button>
-            </form>
-            @else
-            <form action="evaluation" method="post">
-              @csrf
-              <input type="hidden" name="id" value="{{ $reserve->id }}">
-              <button class="edit__btn">評価する</button>
-            </form>
+          <form action="/edit" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{ $reserve->id }}">
+            <button class="edit__btn">変更する</button>
+          </form>
+          @else
+          <form action="evaluation" method="post">
+            @csrf
+            <input type="hidden" name="id" value="{{ $reserve->id }}">
+            <button class="edit__btn">評価する</button>
+          </form>
           @endif
         </div>
         <form action="qrcode" method="post">
@@ -76,7 +76,6 @@
           @else 
           <img class="shop__img" src="{{asset($like->shop->img)}}" alt="">
           @endif
-
           <!-- ↓local環境 -->
           <!-- <img class="shop__img" src="{{asset($like->shop->img)}}" alt=""> -->
           <div class="card__text">
