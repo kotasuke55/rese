@@ -59,6 +59,7 @@ QRコード（予約の情報を確認する）
 Laravel Framework 8.83.23  
 PHP 8.1.6  
 Javascript  
+Mysql 5.7.34  
 
 ## テーブル設計
 ![スクリーンショット 2022-09-18 23 32 01](https://user-images.githubusercontent.com/104364543/190912397-1855991d-1438-4be6-abae-93273d3557ee.png)  
