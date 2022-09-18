@@ -25,18 +25,42 @@
       <form action="create" method="post" enctype='multipart/form-data'>
         @csrf
         <table>
+          @error('shop')
+          <tr>
+            <th></th>
+            <td><span>{{ $message }}</span></td>
+          </tr>
+          @enderror
           <tr>
             <th>店舗名</th>
-            <td><input type="text" name="shop" required></td>
+            <td><input type="text" name="shop"></td>
           </tr>
+          @error('content')
+          <tr>
+            <th></th>
+            <td><span>{{ $message }}</span></td>
+          </tr>
+          @enderror
           <tr>
             <th>お店の説明</th>
-            <td><input type="text" name="content" required></td>
+            <td><input type="text" name="content"></td>
           </tr>
+          @error('img')
+          <tr>
+            <th></th>
+            <td><span>{{ $message }}</span></td>
+          </tr>
+          @enderror
           <tr>
             <th>店舗画像</th>
-            <td> <input type="file" name="file" required></td>
+            <td><input type="file" name="file"></td>
           </tr>
+          @error('area_id')
+          <tr>
+            <th></th>
+            <td><span>{{ $message }}</span></td>
+          </tr>
+          @enderror
           <tr>
             <th>エリア番号</th>
             <td>
@@ -47,6 +71,12 @@
               </select>
             </td>
           </tr>
+          @error('genre_id')
+          <tr>
+            <th></th>
+            <td><span>{{ $message }}</span></td>
+          </tr>
+          @enderror
           <tr>
             <th>ジャンル番号</th>
             <td>
@@ -57,6 +87,12 @@
               </select>
             </td>
           </tr>
+          @error('representative_id')
+          <tr>
+            <th></th>
+            <td><span>{{ $message }}</span></td>
+          </tr>
+          @enderror
           <tr>
             <th>店舗代表者ID</th>
             <td><input type="number" name="representative_id"></td>
@@ -68,7 +104,7 @@
     <div class="edit">
       <p class="ttl">店舗情報の更新</p>
       <p class="ttl">店舗の選択</p>
-      <form action="select" method="post">
+      <form action="select" method="get">
         @csrf
         <select name="id">
           @foreach($shops as $shop)
@@ -88,15 +124,6 @@
           @endforeach
         </select>
         <button>送信</button>
-      </form>
-    </div>
-    <div class="images">
-      <p class="ttl">店舗画像を保存する</p>
-      <form action="image" method="post" enctype='multipart/form-data'>
-        @csrf
-        <input type="file" name="file" required>
-        <input class="shop_id" type="number" name="shop_id" placeholder="店舗ID" required>
-        <button>アップロード</button>
       </form>
     </div>
   </div>

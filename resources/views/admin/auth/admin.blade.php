@@ -13,11 +13,20 @@
         <form action="admin/create" method="post">
         @csrf
             <p>代表者名</p><span>必須</span>
-            <input type="text" name="name" required>
+            <input type="text" name="name">
+            @error('name')
+                <span>{{$message}}</span>
+            @enderror
             <p>メールアドレス</p><span>必須</span>
-            <input type="text" name="email" required>
+            <input type="text" name="email">
+            @error('email')
+                <span>{{$message}}</span>
+            @enderror
             <p>パスワード</p><span>必須</span>
-            <input type="text" name="password" required>
+            <input type="text" name="password">
+            @error('password')
+                <span>{{$message}}</span>
+            @enderror
             <br>
             <button>送信</button>
         </form>

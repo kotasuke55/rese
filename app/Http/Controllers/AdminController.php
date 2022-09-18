@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\AdminRequest;
 use App\Models\Representative;
 use App\Models\User;
 use Mail;
@@ -24,7 +25,7 @@ class AdminController extends Controller
         return view('admin.auth.admin',compact('users'));
     }
 
-    public function create(Request $request)
+    public function create(AdminRequest $request)
     {
         $representative = Representative::create([
             'name' => $request->name,

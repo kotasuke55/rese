@@ -56,7 +56,7 @@ Route::middleware('auth:representative')->group(function () {
 
     Route::post('create',[RepresentativeController::class,'create']);
 
-    Route::post('select',[RepresentativeController::class,'find']);
+    Route::get('select',[RepresentativeController::class,'find']);
                 
     Route::post('update',[RepresentativeController::class,'update']);
 

@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 use App\Http\Requests\RegisterRequest;
+use App\Http\Requests\ShopCreateRequest;
 use App\Models\Shop;
 use App\Models\Genre;
 use App\Models\Area;
@@ -31,7 +32,7 @@ class RepresentativeController extends Controller
         return view('representative.management',compact('user','shops','representatives','reserve_shops','genres','areas'));
     }
 
-    public function create(Request $request)
+    public function create(ShopCreateRequest $request)
     {
         //heroku環境でエンコードしたデータをmysqlに保存する
         $image = base64_encode(file_get_contents($request->file->getRealPath()));
@@ -62,7 +63,7 @@ class RepresentativeController extends Controller
         return view('representative.edit',compact('shop'));
     }
 
-    public function update(Request $request)
+    public function update(ShopCreateRequest $request)
     {
         //heroku環境でエンコードしたデータをmysqlに保存する(local環境ではコメントアウトしてください)
         $image = base64_encode(file_get_contents($request->file->getRealPath()));
@@ -91,7 +92,7 @@ class RepresentativeController extends Controller
             //'genre_id' => $request->genre_id,
             //'representative_id' => $request->representative_id
         //]);
-        
+
         return redirect('representative/management');
     }
 
