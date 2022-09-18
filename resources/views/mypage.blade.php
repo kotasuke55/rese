@@ -71,11 +71,7 @@
         @foreach($likes as $like)
         <div class="shop__card">
           <!-- ↓heroku環境での画像の表示 -->
-          @if($like->shop->id > 20)
-          <img class="shop__img" src="data:image/png;base64,<?= $like->shop->img ?>" alt="">
-          @else 
-          <img class="shop__img" src="{{asset($like->shop->img)}}" alt="">
-          @endif
+
 
           <!-- ↓local環境 -->
           <!-- <img class="shop__img" src="{{asset($like->shop->img)}}" alt=""> -->
