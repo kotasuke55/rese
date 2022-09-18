@@ -35,7 +35,7 @@ class RepresentativeController extends Controller
     public function create(ShopCreateRequest $request)
     {
         //heroku環境でエンコードしたデータをmysqlに保存する
-        $image = base64_encode(file_get_contents($request->file->getRealPath()));
+        $image = base64_encode(file_get_contents($request->img->getRealPath()));
         $form  = [
             'shop' => $request->shop,
             'content' => $request->content,
@@ -111,14 +111,4 @@ class RepresentativeController extends Controller
         return view('representative.reserve',compact('reserves'));
     }
 
-    public function image(Request $request)
-    {
-        $id = $request->shop_id;
-        //$image = $request->file('file');
-        $image = base64_encode(file_get_contents($request->file->getRealPath()));
-        $name = $request->file('file')->getClientOriginalName();
-        $file = $request->file('file')->move('storage/store/'.$id,$name);
-        //Storage::putFileAs("public/store/{$id}",$image,$name);
-        return redirect()->back();
-    }
 }
