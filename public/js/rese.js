@@ -19,7 +19,8 @@ var mm = ("0" + (date.getMonth() + 1)).slice(-2);
 var dd = ("0" + (date.getDate() + 1)).slice(-2);
 document.getElementById("date").value = yyyy + '-' + mm + '-' + dd;
 
-
+//予約の日付を当日からにする記述
+document.getElementById("date").min = yyyy + '-' + mm + '-' + dd;
 
 //予約時の入力をリアルタイムで反映させる記述
 window.addEventListener('DOMContentLoaded',function () {
