@@ -56,6 +56,8 @@ QRコード（予約の情報を確認する）
 
 
 ## 使用技術
+HTML  
+CSS  
 Laravel Framework 8.83.23  
 PHP 8.1.6  
 Javascript  
