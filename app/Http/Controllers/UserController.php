@@ -16,6 +16,7 @@ class UserController extends Controller
     $id = Auth::id();
     $reserves = Reserve::where('user_id',$id)->get();
     $likes = Like::where('user_id',$id)->get();
+    dd($likes);
     return view('mypage',compact('user','reserves','likes'));
   }
 }
