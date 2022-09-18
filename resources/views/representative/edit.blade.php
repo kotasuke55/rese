@@ -47,7 +47,7 @@
             <tr>
                 <th>画像</th>
                 <td>
-                    <input type="file" name="file" value="{{ $shop->img }}">
+                    <input type="file" name="img">
                 </td>
             </tr>
             @error('area_id')
@@ -57,9 +57,13 @@
             </tr>
             @enderror
             <tr>
-                <th>エリアID</th>
+                <th>エリア</th>
                 <td>
-                    <input type="number" name="area_id" value="{{ $shop->area_id }}">
+                    <select name="area_id">
+                        @foreach($areas as $area)
+                        <option value="{{$area->id}}">{{ $area->id }} {{ $area->name }}</option>
+                        @endforeach
+                    </select>
                 </td>
             </tr>
             @error('genre_id')
@@ -69,9 +73,13 @@
             </tr>
             @enderror
             <tr>
-                <th>ジャンルID</th>
+                <th>ジャンル</th>
                 <td>
-                    <input type="number" name="genre_id" value="{{ $shop->genre_id }}">
+                    <select name="genre_id">
+                    @foreach($genres as $genre)
+                        <option value="{{$genre->id}}">{{ $genre->id }} {{ $genre->name }}</option>
+                    @endforeach
+                    </select>
                 </td>
             </tr>
             @error('representative_id')

@@ -60,13 +60,15 @@ class RepresentativeController extends Controller
     public function find(Request $request)
     {
         $shop = Shop::find($request->id);
-        return view('representative.edit',compact('shop'));
+        $areas = Area::all();
+        $genres = Genre::all();
+        return view('representative.edit',compact('shop','areas','genres'));
     }
 
     public function update(ShopCreateRequest $request)
     {
         //heroku環境でエンコードしたデータをmysqlに保存する(local環境ではコメントアウトしてください)
-        $image = base64_encode(file_get_contents($request->file->getRealPath()));
+        $image = base64_encode(file_get_contents($request->img->getRealPath()));
         $form  = [
             'shop' => $request->shop,
             'content' => $request->content,

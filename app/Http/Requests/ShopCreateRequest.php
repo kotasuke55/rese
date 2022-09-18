@@ -26,7 +26,7 @@ class ShopCreateRequest extends FormRequest
         return [
             'shop' => 'required|string|max:191',
             'content' => 'required',
-            'img' => 'required',
+            'img' => 'required|image',
             'area_id' => 'required|integer',
             'genre_id' => 'required|integer',
             'representative_id' => 'nullable|integer'
@@ -40,6 +40,7 @@ class ShopCreateRequest extends FormRequest
             'shop.max' => '店舗名は191文字以内で入力してください',
             'content.required' => 'お店の説明文は入力必須です',
             'img.required' => '店舗画像は入力必須です',
+            'img.image' => '店舗画像は画像を選択してください',
             'area_id.required' => 'エリアIDは入力必須です',
             'area_id.integer' => 'エリアIDは数字で入力してください',
             'genre_id.required' => 'ジャンルIDは入力必須です',

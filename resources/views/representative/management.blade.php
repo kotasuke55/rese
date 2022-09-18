@@ -53,7 +53,7 @@
           @enderror
           <tr>
             <th>店舗画像</th>
-            <td><input type="file" name="file"></td>
+            <td><input type="file" name="img"></td>
           </tr>
           @error('area_id')
           <tr>
