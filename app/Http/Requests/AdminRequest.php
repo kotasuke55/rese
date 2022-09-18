@@ -25,7 +25,7 @@ class AdminRequest extends FormRequest
     {
         return [
             'name' => 'required|string|max:191',
-            'email' => 'required|email|unique:user|string|max:191',
+            'email' => 'required|email|unique:users|string|max:191',
             'password' => 'required|min:8|regex:/\A([a-zA-Z0-9]{8,})+\z/u|max:191'
         ];
     }
