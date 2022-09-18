@@ -34,7 +34,7 @@ class RepresentativeController extends Controller
 
     public function create(ShopCreateRequest $request)
     {
-        //heroku環境でエンコードしたデータをmysqlに保存する
+        //heroku環境でエンコードしたデータをmysqlに保存する(local環境でも使用します)
         $image = base64_encode(file_get_contents($request->img->getRealPath()));
         $form  = [
             'shop' => $request->shop,
@@ -47,12 +47,13 @@ class RepresentativeController extends Controller
         $shop = Shop::create($form);
 
         // ↓local環境でmysqlにstorageのパスを保存する(heroku環境の時はコメントアウトしてください)
-        //$name = $request->file('file')->getClientOriginalName();
-        //$image =$request->file('file');
-        //$id = $shop->id;
-        //Storage::putFileAs("public/store/{$id}",$image,$name);
-        //$update = "storage/store/{$id}/{$name}";
-        //Shop::find($id)->update(['img' => $update]);
+        $name = $request->file('img')->getClientOriginalName();
+        $image =$request->file('img');
+        $id = $shop->id;
+        Storage::putFileAs("public/store/{$id}",$image,$name);
+        $update = "storage/store/{$id}/{$name}";
+        Shop::find($id)->update(['img' => $update]);
+        // ↑ここまで
 
         return redirect()->back();
     }
@@ -68,33 +69,34 @@ class RepresentativeController extends Controller
     public function update(ShopCreateRequest $request)
     {
         //heroku環境でエンコードしたデータをmysqlに保存する(local環境ではコメントアウトしてください)
-        $image = base64_encode(file_get_contents($request->img->getRealPath()));
-        $form  = [
-            'shop' => $request->shop,
-            'content' => $request->content,
-            'img' => $image,
-            'area_id' => $request->area_id,
-            'genre_id' => $request->genre_id,
-            'representative_id' => $request->representative_id
-        ];
-        unset($form['_token']);
-        Shop::find($request->id)->update($form);
-
-        // ↓local環境でmysqlにstorageのパスを保存する(heroku環境ではコメントアウトしてください)
-        //$name = $request->file('file')->getClientOriginalName();
-        //$image =$request->file('file');
-        //$id = $request->id;
-        //Storage::putFileAs("public/store/{$id}",$image,$name);
-        //$update = "storage/store/{$id}/{$name}";
-        //Shop::find($request->id)->update([
+        //$image = base64_encode(file_get_contents($request->img->getRealPath()));
+        //$form  = [
             //'shop' => $request->shop,
             //'content' => $request->content,
-            //'img' => $update,
+            //'img' => $image,
             //'area_id' => $request->area_id,
             //'genre_id' => $request->genre_id,
             //'representative_id' => $request->representative_id
-        //]);
+        //];
+        //unset($form['_token']);
+        //Shop::find($request->id)->update($form);
+        // ↑ここまで
 
+        // ↓local環境でmysqlにstorageのパスを保存する(heroku環境ではコメントアウトしてください)
+        $name = $request->file('img')->getClientOriginalName();
+        $image =$request->file('img');
+        $id = $request->id;
+        Storage::putFileAs("public/store/{$id}",$image,$name);
+        $update = "storage/store/{$id}/{$name}";
+        Shop::find($request->id)->update([
+            'shop' => $request->shop,
+            'content' => $request->content,
+            'img' => $update,
+            'area_id' => $request->area_id,
+            'genre_id' => $request->genre_id,
+            'representative_id' => $request->representative_id
+        ]);
+        // ↑ここまで
         return redirect('representative/management');
     }
 
