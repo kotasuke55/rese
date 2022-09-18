@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Route;
 
 class Authenticate extends Middleware
 {
-    //userとadminの名前付きルートを定義
+    //userとadminとrepresentativeの名前付きルートを定義
     protected $user_root = 'login';
     protected $admin_root = 'admin.login';
     protected $representative_root = 'representative.login';

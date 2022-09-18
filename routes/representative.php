@@ -51,7 +51,7 @@ Route::middleware('auth:representative')->group(function () {
 
     Route::post('logout', [AuthenticatedSessionController::class, 'destroy'])
                 ->name('logout');
-});
+
     Route::get('management',[RepresentativeController::class,'index']);
 
     Route::post('create',[RepresentativeController::class,'create']);
@@ -65,3 +65,5 @@ Route::middleware('auth:representative')->group(function () {
     Route::post('image',[RepresentativeController::class,'image']);
     
     Route::post('representative/delete',[RepresentativeController::class,'remove']);
+
+});
