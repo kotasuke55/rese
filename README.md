@@ -72,6 +72,6 @@ Javascript
 ・ローカル環境とheroku環境での画像の表示が変わりますので、コメントアウトしてあるところの確認しをお願いします。 
   (resources/views/detail.blade.php),(resources/views/mypage.blade.php),(resources/views/shop.blade.php)  
   (app/Http/Controller/Representative/RepresentativeController.php)  
-・heroku環境での場合。最初に登録してある20店舗はseederでテストデータを登録していて画像の表示方法が異なりますので、  
+・heroku環境での場合。最初に登録してある20店舗はseederでテストデータを登録していて画像の表示方法が異なります。  
   店舗代表者画面から最初の20店舗の画像を違うものに変えて更新すると画像が表示されないので、新しい店舗を追加する際は新規登録をしてください。  
 
